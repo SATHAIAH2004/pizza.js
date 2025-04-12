@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Pizza Order</title>
+</head>
+
+<body>
+    <h2>Your Order Summary</h2>
+    <div id="order-details"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const output = document.getElementById("order-details");
+
+        let summary = "<ul>";
+
+        for (const [key, value] of params.entries()) {
+            summary += `<li><b>${key}</b>: ${value}</li>`;
+        }
+
+        summary += "</ul>";
+        output.innerHTML = summary;
+    </script>
+</body>
+
+</html>
